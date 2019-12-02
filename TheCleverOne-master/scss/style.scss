@@ -1,0 +1,393 @@
+/* SASS SETTINGS */
+
+$accent: rgb(228, 40, 57);
+$myBlue: rgb(40, 91, 134);
+$myDarkBlue: rgb(30, 66, 95);
+@mixin navFlex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin colFlex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+@mixin fullScreen {
+    height: 100%;
+    width: 80%;
+    margin: auto;
+    background-image: url(/images/Tinted-BG.jpg);
+    align-content: center;
+}
+
+/* GLOBAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.scroll-down-container {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* NAV BAR */
+
+#fixed-bar {
+    @include navFlex();
+    position: fixed;
+    height: 4rem;
+    width: 100%;
+    background-color: $myBlue;
+}
+
+#fixed-bar nav span a {
+    color: inherit;
+    font-size: 24px;
+    text-decoration: none;
+    margin-left: 5rem;
+    padding: 1rem 1em;
+    border-radius: 35px;
+    &:hover {
+        background-color: $myDarkBlue;
+        cursor: pointer;
+    }    
+}
+
+#social-media ul {
+    display: flex;
+    margin-right: 5rem;
+    li {
+        list-style: none;
+        padding-right: 2rem;
+    }
+}
+
+/* SCROLL INDICATOR ANIMATION */
+
+.scroll-down-container span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-bottom: 3px solid #fff;
+    border-right: 3px solid #fff;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.scroll-down-container span:nth-child(1) {
+    animation-delay: -0.2s;
+}
+
+.scroll-down-container span:nth-child(2) {
+    animation-delay: -0.4s;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px, -20px);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: rotate(45deg) translate(20px, 20px);
+    }
+}
+
+/* IMAGE SETTINGS */
+
+.img-style {
+    border-radius: 35px;
+    max-width: 1139px;
+    width: 100%;
+    height: auto;
+    max-height: 750px;
+    border: 3px solid #fff;
+}
+
+.larger-image-container img{
+    max-height: 450px;
+    width: 80%;
+}
+
+
+/* TEXT SETTINGS */
+
+.text-accent {
+    color: $accent;
+}
+
+.information-text {
+    margin-bottom: 2em;
+}
+
+.information-text, header h2 {
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 2rem;
+}
+
+.book-now-button {
+    background-color: #fff;
+    color: $accent;
+    padding: 0 1em;
+    border-radius: 35px;
+    font-size: 4rem;
+    font-weight: bold;
+    width: 7em;
+    margin-top: 20px;
+}
+
+body {
+    color: #fff;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    background-color: #001500;
+}
+
+.main-section {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-gap: 1em;
+    align-items: center;
+    padding: 5rem;
+    width: 80%
+    main {
+        padding-left: 2em;
+    }
+    main h3 {
+        font-size: 4rem;
+    }
+}
+
+#pg1 {
+    padding-top: 4rem;
+    @include fullScreen();
+    header {
+        margin: 1em;
+    }
+    header h1 {
+        font-size: 6rem;
+    }
+    button {
+        margin-top:20px;
+    }
+}
+
+#pg2 {
+    @include fullScreen();
+    align-content: center;
+
+}
+
+#pg3 {
+    @include fullScreen();
+    ul {
+        list-style: none;
+    }
+}
+
+#pg4 {
+    @include fullScreen();
+
+}
+
+#pg5 {
+    @include fullScreen();
+    main .h1-style {
+        font-size: 4rem;
+        font-weight: bold;
+    }
+    img {
+        margin: 1em
+    }
+}
+
+/*  RESPONSIVE */
+
+@media(max-width: 600px) { 
+    /* SASS SETTINGS */
+
+@mixin fullScreen {
+    height: 100%;
+    width: 90%;
+    background-image: url(/images/Tinted-BG.jpg);
+    align-content: center;
+}
+
+/* NAV BAR */
+
+#fixed-bar {
+    justify-content: space-around;
+}
+
+#fixed-bar nav {
+    display: none;
+    width: 0%;
+}    
+
+#social-media ul {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    li {
+        list-style: none;
+        padding-left: 2em;
+    }
+    li img {
+        width: 30px;
+    }
+}
+
+/* IMAGE SETTINGS */
+
+.img-style {
+    border-radius: 35px;
+    max-height: 300px;
+    width: auto;
+    border: 3px solid #fff;
+}
+
+.larger-image-container img{
+    max-height: 450px;
+    width: 100%;
+}
+
+/* TEXT SETTINGS */
+
+.text-accent {
+    color: $accent;
+}
+
+.information-text {
+    margin-bottom: 2em;
+}
+
+.information-text, header h2 {
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 2rem;
+}
+
+.book-now-button {
+    background-color: #fff;
+    color: $accent;
+    padding: 0 1em;
+    border-radius: 35px;
+    font-size: 2rem;
+    font-weight: bold;
+    width: 8em;
+    margin-top: 20px;
+}
+
+body {
+    color: #fff;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    background-color: #001500;
+    overflow-x: hidden;
+}
+
+.main-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1em;
+    align-items: center;
+    padding: 1rem;
+    width: 100%
+    main {
+        padding-left: 1em;
+    }
+    main h3 {
+        font-size: 24px;
+    }
+}
+
+#pg1 {
+    @include colFlex();
+    padding-top: 4rem;
+    @include fullScreen();
+    header {
+        margin: 1em;
+    }
+    header h1 {
+        font-size: 2em;
+        font-weight: bold;
+        margin-bottom: 1em;;
+    }
+    header h2 {
+        font-size: 20px;
+    }
+    button {
+        margin-bottom: 5rem;
+    }
+}
+
+#pg2 {
+    @include fullScreen();
+    align-content: center;
+    img {
+        margin-bottom: .5em; 
+    }
+    h3 {
+        font-size: 1.5em;
+        margin-bottom: .5em;
+    }
+    p {
+        display: none;
+    }
+
+}
+
+#pg3 {
+    @include fullScreen();
+    h3 {
+        font-size: 2em;
+        margin-bottom: .5em;
+    }
+    p {
+        font-size: 20px;
+        margin-bottom: .5em;
+    }
+    ul {
+        display: none;
+    }
+}
+
+#pg4 {
+    @include fullScreen();
+    h3 {
+        font-size: 2em;
+    }
+    p {
+        display: none;
+    }
+}
+
+#pg5 {
+    @include fullScreen();
+    @include colFlex();
+    padding-top: .5em;
+    main .h1-style {
+        font-size: 2em;
+    }
+    .information-text {
+        font-size: 20px;
+    }
+    img {
+        margin: 1em 0;
+    }
+}
+}

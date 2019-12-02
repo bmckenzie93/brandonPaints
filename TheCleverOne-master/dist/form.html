@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Clever One | Request Form</title>
+    <link rel="stylesheet" href="css/style.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div id="request-form">
+        <header>
+            <h1>The Clever One</h1>
+            <h2><span class="text-accent">live</span> event mural artist</h2> 
+        </header>
+        <form action="#">
+            <div class="column-1">
+                <p id="form-instructions">Fill out all fields on this form and click submit to send your request</p>
+                <span class="input-heading">Name:</span>
+                <input type="text" name="name" required>
+                <span class="input-heading">Email:</span>
+                <input type="email" name="email" required>
+                <span class="input-heading">Phone Number:</span>
+                <input type="tel" name="phone" required>
+            </div>
+            <div class="column-2">
+                <span class="input-heading">Date of Event:</span>
+                <input type="date" name="date" required>
+                <span class="input-heading">Start Time:</span>
+                <input type="time" name="start-time" required>
+                <span class="input-heading">End Time:</span>
+                <input type="time" name="end-time" required>
+                <span class="input-heading">Location of Event:</span>
+                <input type="text" name="location" required>
+            </div>
+            <div class="column-3">
+                <span class="input-heading">Description of Event:</span>
+                <textarea name="event-description" id="eventDescription" cols="30" rows="10"></textarea>
+                <p class="description-instructions">Please provide as much information as possible in your description</p>
+                <p class="description-instructions">Include any important details or special requests</p>
+                <input type="submit" value="submit">
+            </div>
+        </form>
+        <div id="success-page">
+            <header>
+                <h1>Your Request Has Been <span class="text-accent">Submitted</span></h1>
+            </header>
+            <main>
+                <span class="information-text">you will recieve an email or text message reply as soon as possible</span>
+                <span class="information-text">thank you very much</span>
+            </main>        
+        </div>        
+        <div id="fixed-bar">
+            <nav>
+                <span><a href="#">Home</a></span>
+            </nav>
+            <div id="social-media">
+                <ul>
+                    <li><a href="#"><img src="/Images/www-icon.png" alt="www icon"></a></li>
+                    <li><a href="#"><img src="/Images/ig-logo.png" alt="instagram logo"></a></li>
+                    <li><a href="#"><img src="/Images/yt-logo.png" alt="youtube logo"></a></li>
+                    <li><a href="#"><img src="/Images/email-logo.png" alt="email logo"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="script.js"></script>
+</body>
+</html>
